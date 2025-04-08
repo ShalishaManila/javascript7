@@ -31,3 +31,12 @@ const words = [
   "loving",
   "north",
 ];
+
+//Initializing word
+let randomWord;
+
+//Initializing score
+let score = 0;
+
+//Initializing time
+let time = 10;
