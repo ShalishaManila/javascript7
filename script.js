@@ -32,6 +32,24 @@ const words = [
   "north",
 ];
 
+// Functions
+function addWordToDOM(){}
+
+function updateScore(){}
+
+function checkWord(e){}
+
+function gameOver(){}
+
+function updateTime(){}
+
+// Event Listeners
+settingsBtn.addEventListener("click", function(){});
+
+difficultySelect.addEventListener("change", function(){});
+
+text.addEventListener("keypress", checkWord);
+
 //Initializing word
 let randomWord;
 
