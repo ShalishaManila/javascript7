@@ -43,7 +43,6 @@ function startGame() {
 
 // Add radom word to guess
 function addWordToDOM() {
-  console.log("Generating New word...");
   randomWord = words[Math.floor(Math.random() * words.length)];
   word.textContent = randomWord;
   console.log(randomWord);
@@ -52,7 +51,6 @@ function addWordToDOM() {
 // Update score if guessed correct word
 function updateScore() {
   score++;
-  console.log("updating score", score);
   scoreEl.textContent = score;
 }
 
@@ -63,7 +61,7 @@ function gameOver() {
   endgameEl.insertAdjacentHTML("beforeend", "<h1>Game Over</h1>");
   endgameEl.insertAdjacentHTML(
     "beforeend",
-    `<p>Difficulty Level: ${difficultySelect.value} </h1>`
+    `<p>Difficulty Level: ${selectedDifficulty} </h1>`
   );
   endgameEl.insertAdjacentHTML("beforeend", `<p>Final Score: ${score} </h1>`);
   //endgameEl.textContent = 'GAME OVER ... \n Time Out!!! \n Final Score: ', score, '\n Game Difficulty: ', difficultySelect.value;
@@ -78,7 +76,6 @@ function gameOver() {
 function resetGame() {
   randomWord = words[Math.floor(Math.random() * words.length)];
   endgameEl.style.display = "none";
-  console.log("clearing interval!!!");
   clearInterval(intervalId);
   switch (difficultySelect.value) {
     case "easy":
@@ -95,7 +92,6 @@ function resetGame() {
       break;
   }
   score = 0;
-  console.log("score cleared", score);
   scoreEl.textContent = score;
   startGame();
 }
@@ -122,7 +118,6 @@ function updateTime() {
 
 // When difficulty selection changes
 function difficultySelect_Change() {
-  console.log(difficultySelect.value);
   selectedDifficulty = difficultySelect.value;
 }
 
@@ -156,5 +151,7 @@ let score = 0;
 //Initializing time
 let time = 10;
 let intervalId;
+
+let selectedDifficulty;
 
 startGame();
